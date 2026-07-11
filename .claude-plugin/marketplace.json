@@ -1,0 +1,12 @@
+{
+  "name": "brand-book-studio",
+  "owner": { "name": "Sam Potozkin", "url": "https://sampotozkin.com" },
+  "plugins": [
+    {
+      "name": "brand-book-generator",
+      "source": "./plugins/brand-book-generator",
+      "description": "Complete PDF brand books + AI Brand Kit guardrail files. Create a new identity from scratch or codify an existing brand from its website.",
+      "version": "1.0.0"
+    }
+  ]
+}
