@@ -100,6 +100,13 @@ creativity drop required content.
 | Asset/provenance index | Yes | Yes | Yes | Yes + rights expiry | Skip | Yes + version log |
 
 Notes on the floor:
+- **Floors are OUTCOMES, not sections.** Each row names a capability the reader must end
+  up with, not a chapter that must exist. "Asset/provenance index: Yes" means *every
+  claim and file is traceable* — satisfiable by a manifest chapter, per-page footnotes,
+  swatch annotations, or a colophon (placement is seeded in `structural_seeds.md`).
+  "Do/don't guidance: Yes" means *violations are detectable by a stranger* — a severity
+  register, flat commandments, or rules woven into each system chapter all qualify. The
+  QA question is never "does the section exist?" but "can the reader do the thing?"
 - "Voice demonstration always paired with codification" — a witty book must still state
   its rules; wit alone is demonstration without governance.
 - Every book names an escalation owner (a person, a role, or an inbox — "none" is a
