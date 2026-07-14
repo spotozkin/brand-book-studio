@@ -175,6 +175,47 @@ present when the brand carries licensed IP; (e) the two runs remain structurally
 DISTINGUISHABLE under the digest diff — proving determinism constrained facts, not
 design. Failing (e) while passing (a–d) means the fix over-rotated; re-check the seeds.
 
+## Self-consistency gate — the book obeys its own rules (v1.5.1)
+
+Added after the LGS-2 catch: the book's figures drew the mark as a red box with "LEGO"
+retyped in a font, while its own PROHIBITED table banned retyping the tile. A book that
+violates its own rules in its own pages loses all authority — this gate makes the book
+its own first compliance test.
+
+1. **Real artwork in every depiction of the mark.** Any figure, mockup, diagram, cover,
+   or closing page that shows the mark embeds the actual supplied artwork (inline the
+   SVG source directly into the HTML — it scales to any size; a raster master is placed
+   as an <img>). Rebuilding the mark as styled text or shapes is the exact violation
+   Mode B books prohibit. If, and only if, no artwork was supplied at all, a figure may
+   show a POSITION placeholder — a neutral outlined box labeled "mark position —
+   schematic, not the mark" — never brand letterforms in a font.
+2. **Every NEVER/PROHIBITED rule is grepped against the book itself.** Before export,
+   walk the book's own restriction table and check each row against the book's pages:
+   retyped wordmarks in figures, banned color pairings in swatch layouts, text set in a
+   demoted color, marks placed inside their own stated clear space, effects the rules
+   ban. One self-violation fails the gate.
+3. **Minimum-size honesty.** If a figure renders the mark below the book's own stated
+   floor (thumbnails in tables, tiny footer mocks), the caption says so ("shown below
+   minimum size for diagram purposes") or the figure is redrawn larger.
+
+## Component fidelity census (Mode B mockups)
+
+DevTools values make a mockup's colors and type exact; this gate makes its STRUCTURE
+exact. For every site component rebuilt as an annotated mockup (cards, heroes, nav,
+buttons):
+
+1. **Census before build.** From the capture (or pasted outerHTML, which outranks the
+   screenshot), list every visible element of the real component — badges, wishlist
+   controls, rating rows, age/piece metadata, ™/® marks, prices and strikethroughs,
+   CTAs. The census is the build spec.
+2. **Diff after build.** Every census element appears in the mockup, or the mockup's
+   annotation names the omission and its reason ("quick-add omitted: hover-only state,
+   out of scope for print"). Silent omissions fail the gate.
+3. **States are content.** If the person supplied variant captures (sale, backorder,
+   flagged), the mockup or its annotation documents which elements are structural and
+   which are state-dependent. If no variants were supplied, say the mockup reflects the
+   one observed state — at the seeded provenance placement, not on the body page.
+
 ## Grounding & date gate (Mode B) — zero hallucinations
 
 Added in v1.5. Enforces `references/web_grounding.md` at export time:

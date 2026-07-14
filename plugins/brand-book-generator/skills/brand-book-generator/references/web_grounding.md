@@ -106,6 +106,10 @@ short friendly message with the exact keystrokes for their OS:
 - Copy-paste the words (highlight → Ctrl/Cmd+C, straight into the chat): the big
   headline on the homepage, the tagline, the tiny legal line at the very bottom of the
   site, and 2-3 sentences of typical page text.
+- Component close-ups — when the book will rebuild site components as mockups (product
+  cards, buttons, nav): a tight screenshot of ONE example of each, plus a second example
+  of any component that changes state (a card on sale, an out-of-stock card, one with a
+  "New" flag). Variants are how the mockup learns what's optional vs. structural.
 - Confirm: "were these taken today?" (capture-date discipline, §2), and attach any logo
   files they already have.
 
@@ -141,6 +145,12 @@ way around DevTools…") or when one specific value resists rungs 0–2:
 - **Console variant of the bookmarklet:** F12 → Console → paste the same code without
   the `javascript:` prefix → Enter. Warn Chrome users in advance: the first paste is
   blocked until you type `allow pasting` and press Enter — this is normal.
+- **Component structure via outerHTML — the near-1:1 unlock, and the easiest DevTools
+  move there is:** right-click the component on the page (a product card, a button) →
+  Inspect → in the panel, right-click the highlighted line → **Copy → Copy outerHTML**
+  → paste it back. That's the component's complete real structure — every element,
+  including hover-only controls and icon labels a screenshot can miss. Offer this
+  whenever a mockup must closely match a live component.
 - **Logo via Network:** F12 → Network tab → filter "svg" → reload → right-click the
   logo asset → Save.
 - **Full-size page screenshot:** F12 → Ctrl/Cmd+Shift+P → type "screenshot" → "Capture
