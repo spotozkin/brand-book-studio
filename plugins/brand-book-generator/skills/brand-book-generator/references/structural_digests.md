@@ -129,6 +129,83 @@ aphorism ratio within 0.03) — they are the known-cloned pair and the reason th
 exists. Any candidate matching either on the diff rules is reproducing the exact failure
 this gate was built to catch. Their shared cadence is the HOUSE HAND: rule 9's baseline.
 
+### BOOK: Rolex "A Record of the Visual System" (Mode B test) · Jul 2026 · v3
+POSTURE / CENTRAL QUESTION: heritage/editorial record (essayistic studio book) ·
+implicitly "holding the ration — pigment scarcity defended against enthusiasm"
+COVER: white field, gold coronet centered, letterspaced small-caps title, single
+metadata footer line; no contents page anywhere ("chapters announce themselves")
+SECTION SEQUENCE: why-this-exists preface → color & light (2pp incl. photographic
+tones) → mark (2pp) → letterforms → voice → annotated applications → colophon →
+full-green typographic closer
+HEADING REGISTER: essayistic declaratives — "Almost every page is black and white." ·
+"Where the richness actually comes from"
+COINED HEADINGS/PHRASES: "A Record of the Visual System" · "color is rationed" / "hold
+the ration" · the crown unit ("measured in crowns") · register names "The archive / The
+stage / The event" · "Lines to measure against" · "A note from the compositor" · "When
+this book runs out" · "A gap acknowledged costs nothing, while a gap improvised costs
+the mark its authority" · "Precision is the ornament" · "Seven colors. Two greens. One
+crown."
+TABLE SCHEMAS: none — all evidence carried in prose and captioned figures; contrast
+ratios inline in swatch notes
+RULE TIERS: none named — absolutes stated in prose
+COMPONENT COUNTS: 3 traits / 0 rewrites (3 exemplary lines only) / 0 tiers / 7 colors
+(+2 photographic tones explicitly excluded)
+RHETORICAL BEATS: machine-colors exclusion note · unnamed-font refusal + Inter stand-in
+paragraph · exemplary-lines-only voice format · gaps routed to Geneva, never rebuilt ·
+colophon-in-brand-voice replacing the manifest/control suite · full-field brand-color
+closer carrying an aphorism
+AUTHOR PROFILE: not recorded in this reconstruction — backfill from the HTML SEEDS
+comment if available (digest rebuilt from the delivered PDF)
+IDIOSYNCRASIES / PROSE FINGERPRINT: backfill from HTML; not measurable from PDF alone
+NOTE: facts drifted vs. the v1 Rolex run (palette 7 vs 10; clearspace unit crown WIDTH
+vs HEIGHT; min size 61px vs 96px) — the drift that motivated the v1.4 palette-
+determinism gate.
+
+### BOOK: LEGO "Graphics Standard LGS-2" (Mode B test) · Jul 2026 · v3
+POSTURE / CENTRAL QUESTION: numbered standards manual (spec) · "the identity is a host
+system — hold the frame so the guests can change"
+COVER: white page with hairline box frame, tile top-left, document-control table ON the
+cover, single yellow rule accent
+SECTION SEQUENCE: index → frame & guests → mark → mark conduct → color + conformance →
+letterforms → language registers → imagery → frame in use → sources & registers →
+closing one-drawing restatement
+HEADING REGISTER: institutional § headings — "§ 1 The frame and its guests" · "§ 3 Mark
+conduct"; decimal-numbered clauses (1.1, 2.4) throughout
+COINED HEADINGS/PHRASES: "the frame and its guests" · "host system" · "guest zone" ·
+"Mark conduct" · "the identity set / the interface set" · "a rule without a consequence
+is read as a preference" · "no one fills a gap locally" · "every clause ... is a load
+calculation for this one drawing" · "the brick is the pixel"
+TABLE SCHEMAS: conduct (CODE / RULE) · conformance (COMBINATION / MEASURED /
+CONFORMANCE / PERMITTED AT) · registers (CONTEXT / REGISTER / OBSERVED MARKERS) ·
+corrections (OFF-STANDARD / CORRECTED TO REGISTER) · type environment (ENVIRONMENT /
+SIZE BAND / FACE AND WEIGHT / NOTES) · evidence register (ITEM / EVIDENCE / LOCATION) ·
+artifact register (REF / ARTIFACT / ORIGIN / DISPOSITION)
+RULE TIERS: PROHIBITED / RESTRICTED / STANDARD — consequence-bearing
+COMPONENT COUNTS: 5 language registers (no trait table) / 3 corrections / 3 tiers /
+4 identity + 5 interface colors
+RHETORICAL BEATS: decimal-clause governance · host/guest doctrine as the opening
+chapter · guest-color-confers-no-approval rule · open-confirmations block · unnamed-font
+refusal + dual stand-ins (Poppins specimens, IBM Plex running text) · closing
+restatement-in-one-drawing
+AUTHOR PROFILE: not recorded in this reconstruction — backfill from the HTML SEEDS
+comment if available
+IDIOSYNCRASIES / PROSE FINGERPRINT: backfill from HTML
+NOTE: heavy in-body provenance narration (capture counts and dates in body clauses and
+figure captions; input materials named on the COVER) — the leakage that motivated the
+v1.4 confidence lint. Facts also corrected/extended vs. the v1 LEGO run (Surface Yellow
+≈#F8D749 distinguished from Logo Yellow; Utility Dark ≈#102327 recorded; identity black
+#000000 from master vs sampled #111111) — adjudicate against original captures and lock
+the winners into the canonical LEGO kit before the next run.
+
+### Cross-corpus note — the v3 pair
+Unlike the v1 pair, these two books PASS the sibling rules against each other (different
+postures, registers, tier vocabularies, table schemas, voice formats, closers) —
+evidence the seeds/author machinery works. What they exposed instead: cross-run FACT
+drift and provenance leakage, now gated in v1.4. Their coined phrases above are live
+corpus entries under diff rule 1; the host/guest CONCEPT graduated to mandatory
+conditional content (see the concept table in `anti_fingerprint_checklist.md`) while its
+house names retired with this entry.
+
 ### Precedent lineages (pending)
 When the 23-book professional benchmark corpus is digested into this file (from the
 maintained benchmark notes — see `author_synthesis.md`, "Precedent lineages"), those

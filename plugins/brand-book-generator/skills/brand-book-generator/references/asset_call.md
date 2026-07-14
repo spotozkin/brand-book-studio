@@ -33,6 +33,14 @@ plausibly exists:
    grid, a storefront photo, packaging, signage, a menu, a brochure. Screenshots are
    underrated: they carry palette, type behavior, photography style, and layout habits
    all at once.
+   **Mode B, site-based identities:** upgrade this item with the capture ladder in
+   `references/web_grounding.md`. Rung 0 is Claude's job, not theirs — fetch the site
+   from the URL alone (HTML, CSS tokens, @font-face names, logo SVGs, page copy) before
+   asking for anything. Then ask only for what fetch couldn't see: rung 1 everyday
+   screenshots with exact OS keystrokes plus pasted key copy, rung 2 the one-click
+   bookmarklet (`assets/brand_capture_bookmarklet.txt`) if fetch was blocked or thin,
+   rung 3 DevTools only for the comfortable or for one stubborn value. Canonical values
+   collected here are what let the book match the live site in one pass.
 4. **Photography or media they consider "them"** — 3-5 photos they'd be happy to see in
    the book, or a link to where their imagery lives.
 5. **Fonts they own or already use** — names are enough; files only if they have a

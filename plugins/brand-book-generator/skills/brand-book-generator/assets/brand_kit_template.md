@@ -4,7 +4,11 @@
 Fill every {{PLACEHOLDER}} from the finished brand book. Write rules as commands, not descriptions.
 Include the real mark as inline SVG (or reference the client's actual logo file by name if one exists —
 never a redrawn approximation). Keep the whole file under ~400 lines so it fits comfortably in any
-AI's context alongside a task. Deliver alongside the PDF, and explain to the person what it's for. -->
+AI's context alongside a task. Deliver alongside the PDF, and explain to the person what it's for.
+MODE B ORDER OF OPERATIONS: this kit is CANON for facts. Write palette values, measurement
+units, clearspace, and minimum sizes into this file at sampling time (per the palette-
+determinism gate in references/anti_fingerprint_checklist.md), then render the PDF FROM
+these values. On any conflict between book and kit, the kit wins and the book re-renders. -->
 
 # {{BRAND_NAME}} — AI Content Guardrails
 

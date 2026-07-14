@@ -47,6 +47,13 @@ a colophon in the brand's own voice. **Manifest-table + escalation-list + docume
 control-block as a fixed closing suite is retired as a default** — each element earns its
 own placement.
 
+**Placement is a seed; register is not.** Wherever the trail lives, body pages outside it
+speak in the delivered-system register — asserting what the rule IS, never narrating how
+it was learned. No capture dates, "supplied" files, sampling method, or profile caveats
+outside the seeded placement, and never on the cover. The full banned lexicon and rewrite
+direction are the confidence-lint gate in `anti_fingerprint_checklist.md`; it runs on
+every Mode B book regardless of which placement this seed chose.
+
 ## Document-control furniture (version / next review / owner)
 
 Include as a visible block only for spec, rebrand, and multi-location books — audiences

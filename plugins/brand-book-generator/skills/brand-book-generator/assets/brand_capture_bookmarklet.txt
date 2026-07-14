@@ -1,0 +1,13 @@
+Brand Capture bookmarklet — paste this ENTIRE single line into a bookmark's URL field.
+(For the DevTools console variant, paste everything AFTER "javascript:".)
+
+javascript:(function(){var o={url:location.href,title:document.title,when:new Date().toISOString(),themeColor:null,tokens:{},computed:{},logoImages:[],icons:[],headerSvg:null};try{var m=document.querySelector('meta[name="theme-color"]');if(m)o.themeColor=m.content;}catch(e){}for(var i=0;i<document.styleSheets.length;i++){var rules;try{rules=document.styleSheets[i].cssRules;}catch(e){continue;}if(!rules)continue;for(var j=0;j<rules.length;j++){var q=rules[j];if(q.selectorText&&(q.selectorText===':root'||q.selectorText==='html')){for(var k=0;k<q.style.length;k++){var pn=q.style[k];if(pn.indexOf('--')===0)o.tokens[pn]=q.style.getPropertyValue(pn).trim();}}}}['body','h1','h2','p','a','button','nav','footer'].forEach(function(sel){var el=document.querySelector(sel);if(!el)return;var s=getComputedStyle(el);o.computed[sel]={color:s.color,background:s.backgroundColor,font:s.fontFamily,weight:s.fontWeight,size:s.fontSize};});document.querySelectorAll('img').forEach(function(im){var hint=(im.src||'')+' '+(im.alt||'')+' '+(im.className||'');if(/logo|brand|mark/i.test(hint)&&im.src)o.logoImages.push(im.src);});document.querySelectorAll('link[rel*="icon"]').forEach(function(l){if(l.href)o.icons.push(l.href);});var hs=document.querySelector('header svg, nav svg, a[href="/"] svg');if(hs)o.headerSvg=hs.outerHTML.slice(0,20000);var t=document.createElement('textarea');t.value=JSON.stringify(o,null,1);t.style.cssText='position:fixed;top:8px;left:8px;width:92vw;height:80vh;z-index:2147483647;background:#fff;color:#000;font:12px monospace;padding:10px;border:3px solid #000;border-radius:8px;box-shadow:0 4px 30px rgba(0,0,0,.4)';document.body.appendChild(t);t.focus();t.select();alert('Brand capture ready. The text is already selected - press Ctrl/Cmd+C to copy, then paste it back to Claude. Click the page to close the box.');t.addEventListener('blur',function(){t.remove();});})();
+
+Notes for the skill:
+- Reads the page only; displays a textarea; sends nothing anywhere. Say this to the user.
+- Cross-origin stylesheets are skipped silently (cssRules throws) — the computed{} block
+  still captures real used colors/fonts regardless, so the capture degrades gracefully.
+- If the paste-back JSON has an empty tokens{} but a full computed{}, treat computed
+  values as class 2 evidence and note that the site defines no public CSS tokens.
+- headerSvg, when present, is real vector artwork — save it to an .svg file and treat it
+  as the mark source candidate (confirm with the person it is the logo, not an icon).

@@ -17,6 +17,13 @@ notes on when each earns its place. Do not treat any ordering below as a default
   clearspace in a letterform unit where the mark offers one; only real variants
 - **Brand architecture** — only when sub-brands/programs/locations exist: family tree,
   endorser model, naming construction grammar, shared-mark cross-references
+- **Brand-vs-licensed-IP boundary** — only when the brand renders third-party IP at full
+  strength on its own surfaces (licensors, consoles, retailers, marketplaces, media
+  platforms): define the invariant brand-controlled surfaces vs. the bounded zones where
+  partner art lives untouched, plus both invariants (brand surfaces never tint toward a
+  partner; a partner color's on-site presence confers no approval in owned work). Name
+  the concept in the brand's own vocabulary or leave it unnamed — see the concept table
+  in `anti_fingerprint_checklist.md` for the retired house names
 - **Color system** — palette with hex/RGB, accessible pairings, roles; expand to
   families/ramps/substrate variants when the brand warrants
 - **Typography** — specimen format per Axis 7; license source; fallback stack for web
