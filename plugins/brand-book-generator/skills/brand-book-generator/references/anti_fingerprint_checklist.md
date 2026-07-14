@@ -175,6 +175,42 @@ present when the brand carries licensed IP; (e) the two runs remain structurally
 DISTINGUISHABLE under the digest diff — proving determinism constrained facts, not
 design. Failing (e) while passing (a–d) means the fix over-rotated; re-check the seeds.
 
+## Render proof pass — the generator looks at every page it ships (v1.5.2)
+
+Every other gate reads text; this one reads pixels. WeasyPrint is not a browser — when
+content doesn't fit, it clips and overlaps SILENTLY, so a book can pass every text gate
+and still print broken. Caught live: a footer mock sheared its subscribe column off the
+page edge, an email input collided with its neighbors, a language pill rendered on top
+of text, and an inline severity badge wrapped mid-sentence.
+
+**The pass (mandatory, after every render, before delivery):**
+
+1. Rasterize the whole PDF: `pdftoppm -jpeg -r 100 brand_book.pdf proof/page`
+2. VIEW every page image — actually look at each one — against this defect list:
+   - text or elements clipped at any edge of a container or the page
+   - overlapping elements (inputs over text, pills over labels, columns colliding)
+   - a column narrower than its content (squished type, broken words)
+   - inline badges/pills wrapping mid-sentence or orphaned to their own line
+   - figures exceeding the content width; captions separated from their figures
+   - below-minimum or distorted mark renders (feeds the self-consistency gate)
+3. Fix, re-render, re-rasterize, re-view. Loop until a pass produces ZERO defects.
+   The proof pass has no "good enough" — if a page wouldn't survive being the one page
+   a client happens to open, the book doesn't ship.
+
+**Mock construction rules that prevent the defects (build-time, WeasyPrint-specific):**
+
+- Mocks are sized in percentages of the content column, never in fixed pixels wider
+  than it; every flex child gets `min-width: 0`.
+- A real component with more columns than fit at working proportion is NOT squeezed:
+  either scale the whole mock's type down proportionally, or crop deliberately and say
+  so in the caption ("footer shown at working proportion; two of six columns cropped").
+  Silent squeezing is the defect.
+- Badges, pills, buttons, and spec lines inside mocks and annotations get
+  `white-space: nowrap`; sentences carrying an inline badge are written so the badge
+  sits at a natural break, not mid-clause.
+- Form-control clusters (input + button) either fit their column or stack; overlap is
+  never an acceptable rendering of "adjacent."
+
 ## Self-consistency gate — the book obeys its own rules (v1.5.1)
 
 Added after the LGS-2 catch: the book's figures drew the mark as a red box with "LEGO"
