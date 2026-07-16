@@ -212,6 +212,55 @@ maintained benchmark notes — see `author_synthesis.md`, "Precedent lineages"),
 entries are ANCHORS, not bans: author lineages sample FROM them, and the diff rules
 above apply only among this skill's own outputs, never against the professional corpus.
 
+### BOOK: LEGO "Build to the standard." Digital Identity Standard · 14 Jul 2026 · v1.1 skill
+POSTURE / CENTRAL QUESTION: spec/governance vendor rulebook · "make the permanent
+identity layer unmistakable against the rotating campaign/theme layer" (confirmed)
+COVER: typographic — giant stacked black title "Build to the standard." on white, tile
+top-left at 1.05in, Surface Yellow accent bar, one-line unofficial-status footer
+SECTION SEQUENCE: contents+doc-control strip → permanent inventory (opening on the
+problem) → page anatomy → foundations → mark (anatomy / clearspace+min / placements+gaps)
+→ color (two yellows / canonical four / interface six / campaign surfaces /
+accessibility) → typography (roles / case) → voice (register specimens / corrections) →
+imagery → components at working size (masthead / product card / footer+buttons) →
+System-and-Theme (doctrine / partner rules) → register (DO / DON'T+ASK / one-page recap)
+→ sources (asset index / evidence basis / open confirmations+disclaimer) → cover-mirror
+closer
+HEADING REGISTER: imperative in-voice — "Start with what never changes" · "Place the
+tile, never rebuild it" · "Keep the two yellows apart" · "Let the themes change, inside
+their zones"
+COINED HEADINGS/PHRASES: "Build to the standard." / "Built to the standard." ·
+"the permanent layer / the rotating layer" · "System and Theme" (from the brand's own
+vocabulary: LEGO System A/S + site "themes") · "Presence is not permission" · "the
+system on one page"
+TABLE SCHEMAS: contrast recap (PAIRING / MEASURED / WHERE IT MAY CARRY TEXT) · asset
+index (WHAT SHIPS / FORMAT / PULL IT FROM / USED FOR) · claims (STATEMENT / VERIFIED
+AGAINST) · evidence basis (VALUE CLASS / BASIS) · open confirmations (# / QUESTION /
+ROUTE TO) · corrections (NOT THIS / THIS, 4 rows, no commentary)
+RULE TIERS: DO / DON'T / ASK FIRST — consequence-bearing (ships without review /
+rejected at review / route or treated as DON'T), DO wing leading
+COMPONENT COUNTS: 4 voice registers (specimens, no trait table) / 4 corrections /
+3 tiers / 4 canonical + 6 interface + 2 campaign colors / 10 figures, all "at working
+size" with numbered callout flags
+RHETORICAL BEATS: numbered-callout artifact annotations with "Figure n — at working
+size" captions · DO-wing-first consequence register · doc-control strip on the contents
+page · contrast ratios annotated on swatches · boxed print-deferral aside (single) ·
+open-confirmations table · two-invariants framing of the licensed-IP rule ·
+quick-reference recap page inside the register chapter
+AUTHOR PROFILE: "the tokens cartographer" · digital design-systems · 2010s ·
+convictions "a value you can't copy-paste is a rule nobody follows" + "designers copy
+what they see, so show everything at working size" · blind spot print production ·
+pet move numbered callout flags on rendered artifacts
+IDIOSYNCRASIES: (1) boxed print-deferral aside in ch02, explicitly reasoned and unique;
+(2) the callout-flag + "Figure n — at working size" captioning convention held on every
+artifact
+PROSE FINGERPRINT: mean 16.4 / stdev 10.5 · em-dash 3.4/1000w · colon 10.7/1000w ·
+aphorism 0.09 · long-sentence 0.16 (measured on final HTML)
+NOTE: facts locked to the canonical LEGO kit (lego-unofficial-BRAND.md): Surface Yellow
+#F8D749, Utility Dark #141414 (supersedes v3's ≈#102327 note; 1697-sample mode across
+the footer capture), Logo Red/Yellow #E3000B/#FFED00 from master, E = tile edge,
+clear space 0.25E, min digital 53 px (masthead-measured). Adjudicate future runs
+against this kit.
+
 ## Appending a new digest
 
 After delivery, write the new book's digest in the schema above, append it here (in the

@@ -104,6 +104,49 @@ expression of rigor (`structural_seeds.md`, "naming the doctrine").
    fresh for this brand — no heading recycled from this skill's previous outputs or from
    the reference examples in any file.
 
+## Rendering gate — silent WeasyPrint corruption (v1.6, expanded v1.7)
+
+Added in v1.6 after the LEGO "Build to the standard." delivery: two WeasyPrint failure
+modes rendered without any error and passed a page-count/structure check, but corrupted
+the page visually — an emoji icon collapsed to zero width and dragged unrelated text into
+overlapping it, and a numbered circular badge (`border-radius:50%` inside a flex row)
+shrank differently on different rows depending on sibling text length.
+
+Expanded in v1.7 after the SAME book shipped two more instances of the flex-shrink family
+on the very next round — an "Add to Bag" button ballooned onto two lines instead of
+hugging its content, and a footer's subscribe column pushed itself past the page's right
+margin — proving that the v1.6 prose rule alone (remember to add `flex:0` to circular
+badges) doesn't generalize to every new flex row someone writes later. v1.7 adds a
+mandatory automated script, `scripts/detect_page_overflow.py`, which rasterizes every
+page and flags any page whose declared margin contains content that shouldn't be there —
+catching the visible SYMPTOM (content outside its box) regardless of which of the three
+flexbox defaults (`flex-shrink:1`, `min-width:auto`, `flex-wrap:nowrap`) caused it, rather
+than relying on the CSS rule being correctly recalled on every future row. Full mechanism,
+CSS fix pattern, and worked examples in `references/rendering_pitfalls.md`.
+
+Run before every export:
+
+```bash
+grep -noE "&#[0-9]{4,6};" brand_book.html
+python3 -c "
+import re
+text = open('brand_book.html', encoding='utf-8').read()
+hits = re.findall(r'[\U0001F300-\U0001FAFF\u2600-\u27BF]', text)
+print('emoji-range hits:', len(hits), hits[:20])
+"
+grep -noE 'style="[^"]*border-radius:\s*50%[^"]*"' brand_book.html
+grep -noE '\.[a-zA-Z0-9_-]+\s*\{[^}]*border-radius:\s*50%[^}]*\}' brand_book.html
+python3 scripts/detect_page_overflow.py brand_book.pdf brand_book.html --skip-pages <cover>,<closer>
+```
+
+Zero matches on the first two greps. Every match on the border-radius greps must carry
+`flex:0` (or both `flex-shrink:0` and `flex-grow:0`) in the same rule/style. The overflow
+script must report zero flagged pages — this is the load-bearing check of the four, since
+it catches distortion/overflow on ANY flex row (buttons, columns, badges), not only the
+circular-badge case the greps target. A flagged page is a near-certain bug regardless of
+how confident the export looked otherwise; crop and look at the specific band before
+dismissing it.
+
 ## Confidence lint (Mode B) — the provenance firewall gate
 
 Added in v1.4 after the LEGO LGS-2 / Rolex Record round: the provenance *placement* seed
@@ -174,42 +217,6 @@ consequences wherever a spec/vendor posture is seeded; (d) the host/guest concep
 present when the brand carries licensed IP; (e) the two runs remain structurally
 DISTINGUISHABLE under the digest diff — proving determinism constrained facts, not
 design. Failing (e) while passing (a–d) means the fix over-rotated; re-check the seeds.
-
-## Render proof pass — the generator looks at every page it ships (v1.5.2)
-
-Every other gate reads text; this one reads pixels. WeasyPrint is not a browser — when
-content doesn't fit, it clips and overlaps SILENTLY, so a book can pass every text gate
-and still print broken. Caught live: a footer mock sheared its subscribe column off the
-page edge, an email input collided with its neighbors, a language pill rendered on top
-of text, and an inline severity badge wrapped mid-sentence.
-
-**The pass (mandatory, after every render, before delivery):**
-
-1. Rasterize the whole PDF: `pdftoppm -jpeg -r 100 brand_book.pdf proof/page`
-2. VIEW every page image — actually look at each one — against this defect list:
-   - text or elements clipped at any edge of a container or the page
-   - overlapping elements (inputs over text, pills over labels, columns colliding)
-   - a column narrower than its content (squished type, broken words)
-   - inline badges/pills wrapping mid-sentence or orphaned to their own line
-   - figures exceeding the content width; captions separated from their figures
-   - below-minimum or distorted mark renders (feeds the self-consistency gate)
-3. Fix, re-render, re-rasterize, re-view. Loop until a pass produces ZERO defects.
-   The proof pass has no "good enough" — if a page wouldn't survive being the one page
-   a client happens to open, the book doesn't ship.
-
-**Mock construction rules that prevent the defects (build-time, WeasyPrint-specific):**
-
-- Mocks are sized in percentages of the content column, never in fixed pixels wider
-  than it; every flex child gets `min-width: 0`.
-- A real component with more columns than fit at working proportion is NOT squeezed:
-  either scale the whole mock's type down proportionally, or crop deliberately and say
-  so in the caption ("footer shown at working proportion; two of six columns cropped").
-  Silent squeezing is the defect.
-- Badges, pills, buttons, and spec lines inside mocks and annotations get
-  `white-space: nowrap`; sentences carrying an inline badge are written so the badge
-  sits at a natural break, not mid-clause.
-- Form-control clusters (input + button) either fit their column or stack; overlap is
-  never an acceptable rendering of "adjacent."
 
 ## Self-consistency gate — the book obeys its own rules (v1.5.1)
 
